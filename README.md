@@ -84,5 +84,5 @@ Cette fonction s'appuie sur la précédente pour générer un poème libre. Elle
 L'exemple pratique fourni met en lumière le fonctionnement du script. Une base de données de mots est présentée à titre illustratif, et le résultat concret prend la forme d'un poème généré qui est ensuite affiché. Ce procédé démontre l'efficacité du script dans un contexte d'utilisation réelle.
 
 # Réalisé par :
-Saddedin Saleh
-EL GUEZDI Mohamed Zinelabidine
+- Saddedin Saleh
+- EL GUEZDI Mohamed Zinelabidine
