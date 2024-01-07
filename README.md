@@ -1,4 +1,41 @@
 # poem_generator
+```
+  import random
+  import nltk
+  from nltk.corpus import cmudict
+  from nltk.corpus import words
+  
+  nltk.download('cmudict')
+  nltk.download('words')
+  
+  def find_rhyme(word):
+      pronouncing = cmudict.dict()
+      if word.lower() in pronouncing:
+          word_pronunciation = pronouncing[word.lower()][0]
+          rhyming_words = [w for w, pron in pronouncing.items() if pron[-2:] == word_pronunciation[-2:]]
+          return rhyming_words
+      else:
+          return [word]
+  
+  def generate_line_with_rhyme(words_database):
+      line_length = random.randint(3, 8)
+      line = ""
+      for _ in range(line_length):
+          word_category = random.choice(list(words_database.keys()))
+          word = random.choice(words_database[word_category])
+          line += word + " "
+      last_word = line.split()[-1].lower()
+      rhyming_words = find_rhyme(last_word)
+      rhyming_word = random.choice(rhyming_words)
+      return line.strip().capitalize() + " " + rhyming_word.capitalize()
+  
+  def generate_free_verse_with_features(words_database, lines=10):
+      poem = ""
+      for _ in range(lines):
+          line = generate_line_with_rhyme(words_database)
+          poem += line + "\n"
+      return poem
+```
 Ce script Python exploite le module NLTK pour rechercher des rimes et élaborer un poème libre. Voici une analyse détaillée de ses composants :
 
 ## Importation des modules : 
